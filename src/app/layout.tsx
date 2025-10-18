@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Work_Sans, Comic_Neue } from "next/font/google";
 import "./globals.css";
 
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
     icon: ["/images/kevinhart.png", "/ironic/images/kevinhart.png"],
     shortcut: ["/images/kevinhart.png", "/ironic/images/kevinhart.png"],
   },
+};
+
+/** For IOS autozooming, apparently? */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
