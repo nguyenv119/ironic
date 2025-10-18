@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     "Overlay risky or cringey confessions on stark backgrounds to soften the blow with humor.",
   icons: {
-    icon: "/images/kevinhart.png",
-    shortcut: "/images/kevinhart.png"
+    icon: ["/images/kevinhart.png", "/ironic/images/kevinhart.png"],
+    shortcut: ["/images/kevinhart.png", "/ironic/images/kevinhart.png"],
   },
 };
 
