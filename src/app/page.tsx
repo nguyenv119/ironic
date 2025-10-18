@@ -2,7 +2,7 @@ import { MemeWorkspace } from "../components/meme/meme-workspace";
 
 export default async function HomePage() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white text-black px-6 ">
       <header className="border-b border-black/7">
         <div className="mx-auto flex w-full max-w-3xl items-center justify-between py-4">
           <a
