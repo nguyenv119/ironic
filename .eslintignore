@@ -1,0 +1,4 @@
+.next
+src/.next
+out
+node_modules
