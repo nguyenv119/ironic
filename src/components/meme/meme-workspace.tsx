@@ -152,8 +152,8 @@ export function MemeWorkspace() {
         {isEditing && activeMeme ? (
           <div className="w-full flex justify-center">
             <div className="w-full max-w-[420px] flex flex-col">
-              <label className="text-xs font-semibold uppercase tracking-wide text-muted mb-2">
-                Edit caption
+              <label className="text-xs font-semibold tracking-wide text-muted mb-2">
+                Edit caption (return/enter for new line)
               </label>
               <Textarea
                 value={activeMeme.text}
