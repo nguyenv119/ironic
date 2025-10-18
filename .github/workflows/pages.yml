@@ -29,18 +29,16 @@ jobs:
 
       - name: Install deps
         run: npm ci
-        working-directory: ironic-meme-generator
 
       - name: Build and export (static)
         run: |
           npm run build
           npx next export -o out
-        working-directory: ironic-meme-generator
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ironic-meme-generator/out
+          path: out
 
   deploy:
     needs: build
