@@ -58,9 +58,9 @@ export function MemeWorkspace() {
 
   return (
     <section className="flex w-full flex-col items-center gap-10 lg:gap-12">
-      <div className="flex w-full max-w-3xl flex-col items-center gap-6">
+      <div className="flex w-full max-w-3xl flex-col items-center sm:gap-6 lg:gap-12">
         <div className="w-full">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col sm:gap-6 lg:gap-12">
             <div className="flex w-full justify-start">
               <div ref={previewRef} className="w-full">
               {activeMeme ? (
@@ -94,7 +94,7 @@ export function MemeWorkspace() {
         </div>
         <form onSubmit={handleSubmit} className="w-full max-w-5xl">
           <div className="w-full rounded-full border border-black bg-white px-4 pr-2 py-1 overflow-hidden">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center sm:gap-2 lg:gap-6">
               <input
                 id="meme-input"
                 value={input}
