@@ -3,7 +3,6 @@
 import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { Send } from "lucide-react";
-import { toPng } from "html-to-image";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { memeImages } from "../../images";
@@ -12,6 +11,7 @@ type MemeState = {
   id?: string;
   text: string;
   imageId: string;
+  fontSize?: string;
 };
 
 export function MemeWorkspace() {
@@ -19,7 +19,6 @@ export function MemeWorkspace() {
   const [input, setInput] = useState("");
   const [activeMeme, setActiveMeme] = useState<MemeState | null>(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [isDownloading, setIsDownloading] = useState(false);
 
   const currentImage = useMemo(() => {
     if (!activeMeme) return memeImages[0];
@@ -33,10 +32,12 @@ export function MemeWorkspace() {
 
     const image = memeImages[Math.floor(Math.random() * memeImages.length)] ?? memeImages[0];
 
-    const meme: MemeState = {
-      text: trimmed,
-      imageId: image.id,
-    };
+    const fontSize =
+      trimmed.length > 80 ? "text-lg" :
+      trimmed.length > 40 ? "text-2xl" :
+      "text-3xl";
+
+    const meme: MemeState = { text: trimmed, imageId: image.id, fontSize };
 
     setActiveMeme(meme);
     setInput("");
@@ -60,27 +61,6 @@ export function MemeWorkspace() {
     setActiveMeme({ ...activeMeme, text });
   }
 
-  async function handleDownload() {
-    if (!activeMeme || !previewRef.current) return;
-    try {
-      setIsDownloading(true);
-      const dataUrl = await toPng(previewRef.current, {
-        cacheBust: true,
-        quality: 0.95,
-        skipFonts: false,
-      });
-      const link = document.createElement("a");
-      const safeText = activeMeme.text.slice(0, 24).replace(/[^a-z0-9]+/gi, "-");
-      link.download = `ironic-meme-${safeText || "caption"}.png`;
-      link.href = dataUrl;
-      link.click();
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setIsDownloading(false);
-    }
-  }
-
   return (
     <section className="flex w-full flex-col items-center gap-10 lg:gap-12">
       <div className="flex w-full max-w-3xl flex-col items-center gap-6">
@@ -98,7 +78,11 @@ export function MemeWorkspace() {
                       sizes="(max-width: 768px) 100vw, 420px"
                       priority
                     />
-                    <figcaption className="absolute inset-0 flex items-center justify-center p-6 text-center text-3xl font-bold uppercase tracking-tight text-white font-meme [text-shadow:_2px_2px_0_#000] [--stroke:1px_black] [text-stroke:var(--stroke)] [-webkit-text-stroke:var(--stroke)]">
+                    <figcaption
+                      className={`absolute inset-0 flex items-center justify-center p-6 text-center font-bold uppercase tracking-tight text-white font-meme [text-shadow:_2px_2px_0_#000] [--stroke:1px_black] [text-stroke:var(--stroke)] [-webkit-text-stroke:var(--stroke)] ${
+                        activeMeme.fontSize ?? "text-3xl"
+                      }`}
+                    >
                       {activeMeme.text}
                     </figcaption>
                   </figure>
@@ -139,13 +123,6 @@ export function MemeWorkspace() {
           </Button>
           <Button type="button" variant="ghost" onClick={handleEditToggle} disabled={!activeMeme}>
             {isEditing ? "Stop Editing" : "Edit Text"}
-          </Button>
-          <Button
-            type="button"
-            onClick={handleDownload}
-            disabled={!activeMeme || isDownloading}
-          >
-            {isDownloading ? "Preparing..." : "Download"}
           </Button>
         </div>
 
