@@ -57,10 +57,10 @@ export function MemeWorkspace() {
   }
 
   return (
-    <section className="flex w-full flex-col items-center gap-10 lg:gap-12">
-      <div className="flex w-full max-w-3xl flex-col items-center sm:gap-6 lg:gap-12">
+    <section className="flex w-full flex-col items-center gap-6 sm:gap-12 lg:gap-12">
+      <div className="flex w-full max-w-3xl flex-col items-center gap-6 sm:gap-6 lg:gap-12">
         <div className="w-full">
-          <div className="flex flex-col sm:gap-6 lg:gap-12">
+          <div className="flex flex-col gap-6 sm:gap-6 lg:gap-12">
             <div className="flex w-full justify-start">
               <div ref={previewRef} className="w-full">
               {activeMeme ? (

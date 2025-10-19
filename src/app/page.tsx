@@ -14,7 +14,7 @@ export default async function HomePage() {
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-5xl flex-col sm:gap-6 lg:gap-12 px-6 py-12">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-6 sm:gap-6 lg:gap-12 px-6 py-12">
         <section className="space-y-6 mx-auto w-full max-w-3xl">
           <h3 className="text-xl font-semibold leading-tight">
             say whatever, because you&apos;re saying it ironically 🗣️
