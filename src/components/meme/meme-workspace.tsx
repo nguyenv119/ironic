@@ -32,12 +32,7 @@ export function MemeWorkspace() {
 
     const image = memeImages[Math.floor(Math.random() * memeImages.length)] ?? memeImages[0];
 
-    const fontSize =
-      trimmed.length > 80 ? "text-lg" :
-      trimmed.length > 40 ? "text-2xl" :
-      "text-3xl";
-
-    const meme: MemeState = { text: trimmed, imageId: image.id, fontSize };
+    const meme: MemeState = { text: trimmed, imageId: image.id, fontSize: '16px' };
 
     setActiveMeme(meme);
     setInput("");
@@ -68,29 +63,31 @@ export function MemeWorkspace() {
           <div className="flex flex-col gap-6">
             <div className="flex w-full justify-start">
               <div ref={previewRef} className="w-full">
-                {activeMeme ? (
-                  <figure className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-3xl border border-black">
-                    <Image
-                      src={currentImage.src}
-                      alt={currentImage.label}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 420px"
-                      priority
-                    />
-                    <figcaption
-                      className={`absolute inset-0 flex items-center justify-center p-6 text-center font-bold uppercase tracking-tight text-white font-meme [text-shadow:_2px_2px_0_#000] [--stroke:1px_black] [text-stroke:var(--stroke)] [-webkit-text-stroke:var(--stroke)] ${
-                        activeMeme.fontSize ?? "text-3xl"
-                      }`}
-                    >
-                      {activeMeme.text}
-                    </figcaption>
-                  </figure>
-                ) : (
-                  <div className="mx-auto flex h-64 w-full max-w-[420px] items-center justify-center rounded-3xl border border-dashed border-black text-xs uppercase tracking-wide text-muted shadow-[8px_8px_0_0_#000]">
-                    Your meme will appear here!
-                  </div>
-                )}
+              {activeMeme ? (
+                <figure className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-3xl border border-black">
+                  <Image
+                    src={currentImage.src}
+                    alt={currentImage.label}
+                    fill
+                    className="object-cover contrast-125 saturate-110"
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    priority
+                  />
+
+                  <div className="absolute inset-0 bg-black/35" />
+
+                  <figcaption
+                    className="absolute inset-0 flex items-center justify-center p-6 text-center font-bold uppercase tracking-tight text-white font-meme"
+                    style={{ fontSize: activeMeme?.fontSize ?? "16px", letterSpacing: "0.5px" }}
+                  >
+                    {activeMeme.text}
+                  </figcaption>
+                </figure>
+              ) : (
+                <div className="mx-auto flex h-64 w-full max-w-[420px] items-center justify-center rounded-3xl border border-dashed border-black text-xs uppercase tracking-wide text-muted shadow-[8px_8px_0_0_#000]">
+                  Your meme will appear here!
+                </div>
+              )}
               </div>
             </div>
           </div>

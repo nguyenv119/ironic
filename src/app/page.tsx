@@ -17,7 +17,7 @@ export default async function HomePage() {
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 py-12">
         <section className="space-y-6 mx-auto w-full max-w-3xl">
           <h3 className="text-xl font-semibold leading-tight">
-            say whatever you want, because you&apos;re saying it ironically 🗣️
+            say whatever, because you&apos;re saying it ironically 🗣️
           </h3>
         </section>
         <MemeWorkspace />
