@@ -6,4 +6,5 @@ for example, instead of sending them this 👇
 
 send them this 👇
 
-<img width="700" height="700" alt="Screenshot 2025-10-18 at 1 20 56 AM" src="https://github.com/user-attachments/assets/00292e58-5047-49b1-a2a4-c4c43277c258" />
+<img width="308" height="509" alt="image" src="https://github.com/user-attachments/assets/b539910e-5625-4484-94fa-fe7d7c689831" />
+
