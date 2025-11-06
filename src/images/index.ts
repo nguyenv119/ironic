@@ -18,7 +18,7 @@ import willem_dafoe from './willem_dafoe.jpg';
 import curry_moon from './curry_moon.jpg';
 import elon from './elon.png';
 import elon_smoking from './elon_smoking.png';
-import mamdani_cutie from './mamdani_cutie.png';
+import mamdani_cute from './mamdani_cute.png';
 import sad_cat_2 from './sad_cat_2.png';
 import praying from './praying.png';
 
@@ -42,7 +42,7 @@ export const memeImages: MemeImage[] = [
   { id: "curry_moon", label: "Curry Moon", src: curry_moon },
   { id: "elon", label: "Elon", src: elon },
   { id: "elon_smoking", label: "Elon Smoking", src: elon_smoking },
-  { id: "mamdani_cutie", label: "Mamdani Cutie", src: mamdani_cutie },
+  { id: "mamdani_cute", label: "Mamdani Cute", src: mamdani_cute },
   { id: "sad_cat_2", label: "Sad Cat 2", src: sad_cat_2 },
   { id: "praying", label: "Praying", src: praying },
 ];
