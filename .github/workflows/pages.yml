@@ -31,20 +31,7 @@ jobs:
         run: npm ci
 
       - name: Build (static export)
-        run: |
-          if [ -z "${{ secrets.NEXT_ZAPIER_WEBHOOK_URL }}" ]; then
-            echo "ERROR: NEXT_ZAPIER_WEBHOOK_URL secret is not set"
-            exit 1
-          fi
-          echo "NEXT_PUBLIC_ZAPIER_WEBHOOK_URL=${{ secrets.NEXT_ZAPIER_WEBHOOK_URL }}" >> .env
-          echo "Verifying .env file was created..."
-          if [ -f .env ]; then
-            echo ".env file exists"
-            grep -q "NEXT_PUBLIC_ZAPIER_WEBHOOK_URL" .env && echo "NEXT_PUBLIC_ZAPIER_WEBHOOK_URL found in .env" || echo "ERROR: Variable not found in .env"
-          else
-            echo "ERROR: .env file was not created"
-            exit 1
-          fi
+        run:
           npm run build
 
       - name: Upload artifact

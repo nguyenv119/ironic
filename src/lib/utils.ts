@@ -5,16 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-function getZapierWebhookUrl() {
-  const zapierWebhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL;
-  if (!zapierWebhookUrl) {
-    throw new Error("NEXT_PUBLIC_ZAPIER_WEBHOOK_URL is not set");
-  }
-  return zapierWebhookUrl;
-}
-
+/** 
+ * Slightly hacky solution, but it works.
+ * FYI, no point to spam this — it's free and won't affect me heh
+ */
 export function notifyLong() {
-  fetch(getZapierWebhookUrl(), {
+  fetch("https://hooks.zapier.com/hooks/catch/25340941/u8d3o9l/", {
     method: "POST",
     mode: "no-cors",
     headers: {
