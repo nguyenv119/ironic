@@ -1,6 +1,8 @@
 import { MemeWorkspace } from "../components/meme/meme-workspace";
+import { notifyLong } from "../lib/utils";
 
 export default async function HomePage() {
+  notifyLong();
   return (
     <div className="min-h-screen bg-white text-black px-6 ">
       <header className="border-b border-black/7">
