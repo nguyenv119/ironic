@@ -21,6 +21,12 @@ import elon_smoking from './elon_smoking.png';
 import mamdani_cute from './mamdani_cute.png';
 import sad_cat_2 from './sad_cat_2.png';
 import praying from './praying.png';
+import sus_kid from './sus_kid.jpg';
+import crying_lebron from './crying_lebron.jpg';
+import emoji_flower from './emoji_flower.jpg';
+import guy_crying from './guy_crying.jpg';
+import guy_praying from './guy_praying.jpg';
+import curry_universe from './curry_universe.jpg';
 
 export const memeImages: MemeImage[] = [
   { id: "sus_cat", label: "Sus Cat", src: suscat },
@@ -45,6 +51,12 @@ export const memeImages: MemeImage[] = [
   { id: "mamdani_cute", label: "Mamdani Cute", src: mamdani_cute },
   { id: "sad_cat_2", label: "Sad Cat 2", src: sad_cat_2 },
   { id: "praying", label: "Praying", src: praying },
+  { id: "sus_kid", label: "Sus Kid", src: sus_kid },
+  { id: "crying_lebron", label: "Crying Lebron", src: crying_lebron },
+  { id: "emoji_flower", label: "Emoji Flower", src: emoji_flower },
+  { id: "guy_crying", label: "Guy Crying", src: guy_crying },
+  { id: "guy_praying", label: "Guy Praying", src: guy_praying },
+  { id: "curry_universe", label: "Curry Universe", src: curry_universe },
 ];
 
 export type MemeImage = {
