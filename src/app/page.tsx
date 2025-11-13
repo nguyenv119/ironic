@@ -1,10 +1,10 @@
 import { MemeWorkspace } from "../components/meme/meme-workspace";
-import { notifyLong } from "../lib/utils";
+import { NotifyOnLoad } from "../components/notify-on-load";
 
 export default async function HomePage() {
-  notifyLong();
   return (
     <div className="min-h-screen bg-white text-black px-6 ">
+      <NotifyOnLoad />
       <header className="border-b border-black/7">
         <div className="mx-auto flex w-full max-w-3xl items-center justify-between py-4">
           <a
