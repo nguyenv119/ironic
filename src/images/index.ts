@@ -27,6 +27,15 @@ import emoji_flower from './emoji_flower.jpg';
 import guy_crying from './guy_crying.jpg';
 import guy_praying from './guy_praying.jpg';
 import curry_universe from './curry_universe.jpg';
+import tiger from './tiger.jpeg';
+import sad_cat_3 from './sad_cat.jpg';
+import super_crying from './super_crying.jpg';
+import sad_squidward from './sad_squidward.jpg';
+import charlie_kirk_girly from './charlie_kirk_girly.jpg';
+import squirrel_evaporating from './squirrel_evaporating.jpg';
+import charlie_kirk_rowley from './charlie_kirk_rowley.jpg';
+import tai_lung_computer from './tai_lung_computer.jpg';
+import big_leagues from './big_leagues.jpg';
 
 export const memeImages: MemeImage[] = [
   { id: "sus_cat", label: "Sus Cat", src: suscat },
@@ -57,6 +66,15 @@ export const memeImages: MemeImage[] = [
   { id: "guy_crying", label: "Guy Crying", src: guy_crying },
   { id: "guy_praying", label: "Guy Praying", src: guy_praying },
   { id: "curry_universe", label: "Curry Universe", src: curry_universe },
+  { id: "tiger", label: "Tiger", src: tiger },
+  { id: "sad_cat_3", label: "Sad Cat 3", src: sad_cat_3 },
+  { id: "super_crying", label: "Super Crying", src: super_crying },
+  { id: "sad_squidward", label: "Sad Squidward", src: sad_squidward },
+  { id: "charlie_kirk_girly", label: "Charlie Kirk Girly", src: charlie_kirk_girly },
+  { id: "squirrel_evaporating", label: "Squirrel Evaporating", src: squirrel_evaporating },
+  { id: "charlie_kirk_rowley", label: "Charlie Kirk Rowley", src: charlie_kirk_rowley },
+  { id: "tai_lung_computer", label: "Tai Lung Computer", src: tai_lung_computer },
+  { id: "big_leagues", label: "Big Leagues", src: big_leagues },
 ];
 
 export type MemeImage = {
